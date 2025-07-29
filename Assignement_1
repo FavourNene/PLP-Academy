@@ -1,0 +1,25 @@
+print("This is a simple calculator")
+a = input("Enter a number: ")
+a = float(a)
+sign = input("Enter an operation sign to perform: +, -, *, / ")
+b = input("Enter another number: ")
+b = float(b) # Convert the second number to a float as well
+
+if sign == '+':
+    result = a + b
+    print("Result:", result)
+elif sign == '-':
+    result = a - b
+    print("Result:", result)
+elif sign == '*':
+    result = a * b
+    print("Result:", result)
+elif sign == '/':
+    if b != 0: # Avoid division by zero
+        result = a / b
+        print("Result:", result)
+    else:
+        print("Error: Cannot divide by zero!")
+else:
+    print("Error: Invalid operation sign!")
+
