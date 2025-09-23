@@ -1,0 +1,29 @@
+class Superhero:
+    def __init__(self, name, power, strength_level):
+        self.name = name
+        self.power = power
+        self.strength_level = strength_level
+
+    def use_power(self):
+        return f"{self.name} uses his base power: {self.power}."
+
+class Batman(Superhero):
+    def __init__(self, name, power, strength_level, gadgets):
+        super().__init__(name, power, strength_level)
+        self.gadgets = gadgets
+
+    def use_power(self):
+        return f"{self.name} uses his intellect and {self.gadgets} to fight crime."
+
+class Superman(Superhero):
+    def __init__(self, name, power, strength_level):
+        super().__init__(name, power, strength_level)
+
+    def use_power(self):
+        return f"{self.name} uses his {self.power} to fly and save the day"
+
+superman = Superman("Clark Kent", "Heat Vision", "High")
+batman = Batman("Bruce Wayne", "Gadgets", "Average", "Batarang")
+
+print(superman.use_power())
+print(batman.use_power())
