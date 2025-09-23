@@ -1,0 +1,24 @@
+try:
+    with open("input.txt", "r") as file:
+        data = file.read()
+        data_upper = data.upper()
+
+    with open("output.txt", "w") as file_out:
+        file_out.write(data_upper)
+
+except FileNotFoundError:
+    print("Error: The file 'input.txt' was not found.")
+
+name= input("\nWhat file do you want to open?: ")
+name += ".txt"
+print(name)
+try:
+    with open(name, 'r') as second_file:
+        data = second_file.read()
+        print(data)
+
+except FileNotFoundError:
+    print("This file does not exist.Enter a valid file name.")
+
+finally:
+    file.close()
