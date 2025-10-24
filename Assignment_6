@@ -1,0 +1,23 @@
+import urllib.request
+import random
+
+def download_image(url):
+
+    number = random.randrange(1, 500)
+    filename = f"image_{number}.jpg"
+
+    try:
+        urllib.request.urlretrieve(url, filename)
+        print(f"✓ Image saved as {filename}")
+    except Exception as e:
+        print(f"✗ Failed to download image: {e}")
+
+def main():
+    image_url = input("Enter the image URL: ").strip()
+    if not image_url:
+        print("✗ Error: No URL provided.")
+        return
+    download_image(image_url)
+
+if __name__ == "__main__":
+    main()
